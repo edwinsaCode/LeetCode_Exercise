@@ -1,4 +1,4 @@
-let S = "0 - 22 1985--324";
+let Ss = "0 - 22 1985--324";
 let kelompok = "";
 let jarak = 0;
 for (let a = 0; a < S.length; a++) {
