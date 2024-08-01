@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: #f5e1e1;
+        font-family: "Courier New", monospace;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .container:hover {
+        transform: scale(1.05);
+      }
+
+      h1 {
+        color: #ff7e67;
+        font-size: 36px;
+      }
+
+      p {
+        color: #333;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .heart {
+        color: #ff7e67;
+        animation: heartbeat 1s infinite;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #ff7e67;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      button:hover {
+        background-color: #ff5747;
+      }
+
+      .slide-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        margin-top: 20px;
+        display: none;
+      }
+
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slide {
+        min-width: 100%;
+        box-sizing: border-box;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+    </style>
+    <title>Happy Birthday Vony</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Selamat Ulang Tahun, Vony!</h1>
+      <p>
+        🎉 Hari ini adalah hari istimewa. Semoga tahun ini membawa kebahagiaan
+        dan sukses untukmu. 🎂
+      </p>
+      <p>Teruslah bersinar seperti <span class="heart">♥</span>.</p>
+      <button onclick="showMessage()">Buka Pesan Spesial</button>
+      <div class="slide-container" id="slideContainer">
+        <div class="slides" id="slides">
+          <div class="slide">😄</div>
+          <div class="slide">🎁</div>
+          <div class="slide">🎈</div>
+          <div class="slide">🌟</div>
+        </div>
+      </div>
+
+      <p
+        id="specialMessage"
+        style="display: none; color: #ff7e67; font-size: 20px; margin-top: 10px"
+      ></p>
+
+      <script>
+        function showMessage() {
+          const messageElement = document.getElementById("specialMessage");
+          messageElement.style.display = "block";
+          messageElement.innerHTML =
+            "Vony, kamu adalah bintang dalam hidupku. Selamat ulang tahun yang ke-23! 🎁";
+
+          const slideContainer = document.getElementById("slideContainer");
+          slideContainer.style.display = "block";
+
+          const slides = document.getElementById("slides");
+          let currentIndex = 0;
+
+          setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.children.length;
+            slides.style.transform = `translateX(${-currentIndex * 100}%)`;
+          }, 1500);
+        }
+      </script>
+    </div>
+  </body>
+</html>
