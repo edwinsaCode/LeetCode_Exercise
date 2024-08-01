@@ -36,5 +36,5 @@ function LetterCombination(digit: string): string[] {
   }
   return final;
 }
-const soal = "234";
+const soal123 = "234";
 console.log(LetterCombination(soal));
